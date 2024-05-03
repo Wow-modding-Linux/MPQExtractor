@@ -65,7 +65,7 @@ const CSimpleOpt::SOption COMMAND_LINE_OPTIONS[] = {
     { OPT_FULLPATH,         "--fullpath",       SO_NONE    },
     { OPT_LOWERCASE,        "-c",               SO_NONE    },
     { OPT_LOWERCASE,        "--lowercase",      SO_NONE    },
-    
+
     SO_END_OF_OPTIONS
 };
 
@@ -164,11 +164,11 @@ int main(int argc, char** argv)
                 case OPT_HELP:
                     showUsage(argv[0]);
                     return 0;
-                
+
                 case OPT_APPLYLIST:
                     strApplyListFile = args.OptionArg();
                     break;
-                
+
                 case OPT_LISTFILE:
                     strListFile = args.OptionArg();
                     break;
@@ -226,7 +226,7 @@ int main(int argc, char** argv)
         return -1;
     }
 
-    
+
     cout << "Opening '" << args.File(0) << "'..." << endl;
     if (!SFileOpenArchive(args.File(0), 0, MPQ_OPEN_READ_ONLY, &hArchive))
     {
@@ -254,8 +254,8 @@ int main(int argc, char** argv)
             return -1;
         }
     }
-    
-    
+
+
     // Apply the patches
     if (!patches.empty())
     {
@@ -289,7 +289,7 @@ int main(int argc, char** argv)
         }
     }
 
-    
+
     // Search the files
     if (!strSearchPattern.empty())
     {
@@ -308,7 +308,7 @@ int main(int argc, char** argv)
 
             SFILE_FIND_DATA findData;
             HANDLE handle = SFileFindFirstFile(hArchive, strSearchPattern.c_str(), &findData, 0);
-        
+
             if (handle)
             {
                 cout << endl;
@@ -347,7 +347,7 @@ int main(int argc, char** argv)
         for (iter = searchResults.begin(), iterEnd = searchResults.end(); iter != iterEnd; ++iter)
         {
             string strDestName = strDestination;
-            
+
             if (bUseFullPath)
             {
                 if (bLowerCase){

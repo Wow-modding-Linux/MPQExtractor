@@ -1,0 +1,20 @@
+.{
+    // the name of your project
+    .name = "MPQExtractor",
+    // the version of your project
+    .version = "0.0.1",
+
+    .paths = .{""},
+    // the actual packages you need as dependencies of your project
+    .dependencies = .{
+        // the name of the package
+        .dirent = .{
+            .url = "https://github.com/tronkko/dirent/archive/refs/tags/1.24.tar.gz",
+            .hash = "12204383e4c2006661eac12ced8479bb6423ff8b67155331479bc7486fff67110be9",
+        },
+        .storm = .{
+            .url = "https://github.com/Wow-modding-Linux/StormLib/archive/refs/tags/v9.25-zig.tar.gz",
+            .hash = "12202c8a3776cb1aa619c2d2b7de3ab6a9bb01b75c86fa9aa95c890deb0cbee75ba8",
+        },
+    },
+}
